@@ -1,0 +1,27 @@
+.rounded {
+    border-radius: 50% !important;
+    width: 120px;
+}
+
+body {
+    background-color: cyan;
+    height: 32vh;
+    align-content: center !important;
+}
+
+.play-button {
+    margin-top: 15%;
+}
+
+.col {
+    text-align: center;
+}
+
+.result {
+    border: 2px solid red;
+    padding: 15px;
+}
+
+.player_score, .computer_score {
+    color: red;
+}
