@@ -1,0 +1,59 @@
+<div class="">
+  <p>
+    <mat-toolbar color="primary">
+      <!-- <mat-toolbar-row> -->
+        <span>ToDo with Countdown Timer</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+      <!-- </mat-toolbar-row> -->
+    </mat-toolbar>
+  </p>
+  
+  <mat-tab-group class="main-content">
+    <mat-tab label="ToDO">
+      <div class="container">
+        <h3>Add Task</h3>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Task Name</label>
+            <input type="text" class="form-control mb-3" id="exampleFormControlInput1" placeholder="Enter Todo..." [(ngModel)]="enteredTask">
+            <button class="btn btn-primary ml-2" (click)="addTask()">Add</button>
+          </div>
+        </div>
+      
+      <div class="col-md-8 mb-2 ml-auto" *ngFor="let task of todoList; let i = index;" >
+        <mat-card [ngClass]="(task?.status)?'bg-success':'bg-primary'"  (dblclick)="markComplete(i)">{{task?.name}}<span class="material-icons remove" (click)="removeTask(i)">
+          delete_forever
+          </span>
+        </mat-card>
+      </div>
+      <div *ngIf="todoList?.length" class="row">
+        <div class="col-md-3 status-card">
+          <div class="status-info bg-primary"></div><span class="status-text">In-Complete</span>
+        </div>
+        <div class="col-md-3 status-card">
+          <div class="status-info bg-success"></div><span class="status-text">Complete</span>
+        </div>
+        <div class="col-md-4 status-card">
+          <span class="status-text">*Double Click to mark as Complete</span>
+        </div>
+      </div>
+    </div>
+    </mat-tab>
+    <mat-tab label="CountDown Timer"> 
+      <div class="container">
+        <mat-form-field class="test" appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker"  [(ngModel)]="selectedDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div class="timer" *ngIf="selectedDate">
+          <countdown units="Year | Month | Days | Hours | Minutes | Seconds"  end={{selectedDate}}></countdown>
+         </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

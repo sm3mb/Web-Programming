@@ -1,0 +1,49 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .timer {
+      background-color: cyan;
+      /* color: red; */
+      margin-top: 10vh;
+  }
+
+  .countdown p {
+    text-align: center;
+    font-weight: bold;
+}
+
+  ::ng-deep .mat-tab-body-content {
+    height: 100%;
+    overflow: hidden !important;
+}
+
+.remove {
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+}
+
+.status-info {
+    width: 12px;
+    height: 12px;
+    margin-top: 0.48vh;
+}
+
+.status-card {
+    display: inline-flex;
+}
+
+.status-text {
+    margin-left: 12px;
+}
+
+.test {
+    margin-left: 25%;
+}
+
+.main-content {
+    background: url('/assets/bg.jpg');
+    margin-top: -14px;
+    height: 90vh;
+}
