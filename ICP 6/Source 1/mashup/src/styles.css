@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+.hide_card {
+    display: none;
+  }
+  
+  .show-card {
+    display: block;
+  }

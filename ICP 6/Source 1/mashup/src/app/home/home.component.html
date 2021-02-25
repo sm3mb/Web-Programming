@@ -1,0 +1,46 @@
+<div class="parent-container">
+  <div class="child-container">
+    <h2>Hello, Welcome to <b>Foodie!!!
+    </b></h2>
+    <!-- <span class="desc">FInd Your Recipe is a Mashup Web Application which is built using <i> Foursquare & Edamam's Recipe Search API </i> . This application find Recipe and Place to find that Food.</span><br><br><br> -->
+    <form>
+      <div class="form-group">
+        <label>Enter a Place:</label><br><br>
+        <div class="form-group col-lg-4 col-lg-offset-4">
+          <input #place type="text" class="form-control" placeholder="Enter Place"/>
+        </div>
+        <br>
+        <button class="btn btn-primary col-lg-2 col-lg-offset-5" (click)="getPlaces($event,place.value)">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+   
+    <div class="col-lg-6 col-lg-offset-3 restaurant_card" [ngClass]="(restaurants.length == 0)?'hide_card':'show_card'">
+      <div class="panel panel-default col-6">
+        <div class="panel-heading"><b>Near by Restaurants</b></div>
+        <div class="panel-body">
+
+          <div *ngFor="let item of restaurants" class="list-group-item clearfix">
+            <div class="pull-left">
+              <h4 class="list-group-item-heading">{{ item.name }}</h4>
+            </div>
+
+            <span class="pull-right">
+             <a href="http://maps.google.com/maps?saddr={{currentLat}},{{currentLong}}
+             &daddr={{item.location.formattedAddress[0]}},{{item.location.formattedAddress[1]}},{{item.location.formattedAddress[2]}}" target="_blank">
+               <img src="../../assets/google.png" style="width: 30px; height: 30px;"></a>
+      </span>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
