@@ -1,0 +1,12 @@
+.example-card {
+  max-width: 500px;
+}
+
+.button-row {
+  margin: 10px 0;
+}
+
+.bg-color {
+  background-color: bisque;
+  margin-left: 25%;
+}
