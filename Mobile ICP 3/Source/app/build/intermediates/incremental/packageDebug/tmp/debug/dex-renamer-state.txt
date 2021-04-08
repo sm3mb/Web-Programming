@@ -1,0 +1,4 @@
+#Wed Apr 07 22:05:47 CDT 2021
+base.0=D\:\\Masters-UMKC\\Spring 2021\\Web\\Web-Programming\\test\\Source\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
